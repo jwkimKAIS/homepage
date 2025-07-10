@@ -138,8 +138,14 @@ nav ul li ul li .submenu {
     </li>
     <li>기술소개
       <ul>
-        <li onclick="showPage('sensor')">Sensor</li>
-        <li onclick="showPage('iolink')">Io Link Machine Vision</li>
+        <li class="has-submenu">IoT Solution
+          <ul class="submenu">
+            <li onclick="showPage('iot_Solution')">Io-Link Master</li>
+            <li onclick="showPage('iot_Solution')">z4</li>
+          </ul>
+        </li>
+        <li onclick="showPage('machine_Vision')">Machine Vision</li>
+        <li onclick="showPage('plasma')">Plasma 장비</li>
         <li class="has-submenu">AOI
           <ul class="submenu">
             <li onclick="showPage('aoi2d')">2D AOI (구조광)</li>
@@ -199,7 +205,7 @@ nav ul li ul li .submenu {
     <div class="page" id="map"><h2>오시는 길</h2><p>기존 페이지 사용</p></div>
 
     <div class="page" id="sensor"><h2>Sensor</h2><p>- 이미지 추가 방식으로 페이지 구조 변경 요청, 이미지가 없을 경우 준비 중 팝업 요청</p></div>
-    <div class="page" id="iolink"><h2>Io Link Machine Vision</h2><p>- 이미지 추가 방식으로 페이지 구조 변경 요청, 이미지가 없을 경우 준비 중 팝업 요청</p></div>
+    <div class="page" id="iiot_Solution"><h2>Io Link Machine Vision</h2><p>- 이미지 추가 방식으로 페이지 구조 변경 요청, 이미지가 없을 경우 준비 중 팝업 요청</p></div>
     <div class="page" id="aoi2d"><h2>2D AOI (구조광)</h2><p>- 이미지 추가 방식으로 페이지 구조 변경 요청, 이미지가 없을 경우 준비 중 팝업 요청</p></div>
     <div class="page" id="aoi25d"><h2>2.5D AOI (OCT)</h2><p>- 이미지 추가 방식으로 페이지 구조 변경 요청, 이미지가 없을 경우 준비 중 팝업 요청</p></div>
     <div class="page" id="aoi3d"><h2>3D AOI (KLENS)</h2><p>- 이미지 추가 방식으로 페이지 구조 변경 요청, 이미지가 없을 경우 준비 중 팝업 요청</p></div>

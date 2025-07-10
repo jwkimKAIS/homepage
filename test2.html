@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KAIS 홈페이지 시안</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    header {
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    nav ul li {
+      position: relative;
+      padding: 15px 25px;
+      cursor: pointer;
+    }
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      list-style: none;
+      border: 1px solid #ccc;
+      background: #fff;
+      width: max-content;
+      min-width: 180px;
+    }
+    nav ul li:hover ul {
+      display: block;
+    }
+    nav ul li ul li {
+      padding: 10px 15px;
+      white-space: nowrap;
+    }
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .page {
+      display: none;
+    }
+    .page.active {
+      display: block;
+    }
+    hr {
+      margin: 20px 0;
+      border: none;
+      border-top: 1px solid #aaa;
+    }
+    /* 기존 코드와 병합 필요 */
+nav ul li {
+  position: relative;
+  padding: 15px 25px;
+  cursor: pointer;
+}
+
+nav ul li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  border: 1px solid #ccc;
+  background: #fff;
+  width: max-content;
+  min-width: 180px;
+  z-index: 1000;
+}
+
+nav ul li:hover > ul {
+  display: block;
+}
+
+/* 2단계 서브 메뉴 스타일 */
+nav ul li ul li.has-submenu {
+  position: relative;
+}
+
+nav ul li ul li.has-submenu:hover .submenu {
+  display: block;
+}
+
+nav ul li ul li .submenu {
+  top: 0;
+  left: 100%;
+  position: absolute;
+  display: none;
+  background: #fff;
+  border: 1px solid #ccc;
+  min-width: 200px;
+  white-space: nowrap;
+}
+.page img {
+  width: 100%;
+  height: auto;
+  max-width: 800px; /* 필요 시 너비 제한 */
+  display: block;
+  margin: 20px auto; /* 가운데 정렬 및 여백 */
+  border-radius: 8px; /* 둥근 모서리 원하면 */
+}
+
+    
+    
+  </style>
+</head>
+<body>
+  <header onclick="resetPages()">KAIS 홈페이지 시안 (상단의 로고 위치, 언어 설정, 검색 위치는 기존대로 진행)</header>
+  <nav>
+  <ul>
+    <li>회사소개
+      <ul>
+        <li onclick="showPage('org')">KAIS</li>
+        <li onclick="showPage('history')">회사연혁</li>
+        <li onclick="showPage('map')">오시는 길</li>
+      </ul>
+    </li>
+    <li>기술소개
+      <ul>
+        <li onclick="showPage('sensor')">Sensor</li>
+        <li onclick="showPage('iolink')">Io Link Machine Vision</li>
+        <li class="has-submenu">AOI
+          <ul class="submenu">
+            <li onclick="showPage('aoi2d')">2D AOI (구조광)</li>
+            <li onclick="showPage('aoi25d')">2.5D AOI (OCT)</li>
+            <li onclick="showPage('aoi3d')">3D AOI (KLENS)</li>
+            <li onclick="showPage('fraunhofer')">Fraunhofer</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>제품소개
+      <ul>
+        <li onclick="showPage('existing-products')">기존 제품</li>
+      </ul>
+    </li>
+    <li>고객지원
+      <ul>
+        <li onclick="showPage('contact')">문의하기</li>
+        <li onclick="showPage('recruit')">채용</li>
+        <li onclick="showPage('data')">자료실</li>
+        <li onclick="showPage('pr')">PR</li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+  <main>
+    <div class="page" id="org">
+        <p>회사소개 <br>
+          KAIS는 최첨단 기술을 통해 고객과 상생해 나가는
+          <br>
+          첨단 솔루션과 장비를 제공하는 기업입니다.
+        </p>
+        <br>
+        <strong>Mission</strong>
+        <br>
+        첨단 기술로 움직이고, 탁월함으로 정의된다.
+        <hr>
+        <strong>Vision </strong>
+        <br>
+        <strong>Industry 5.0 분야에서 세계 최고의 프리미엄 솔루션 제공업체가 되는 것</strong>
+        우리는 산업의 진보를 이끌고 새로운 장을 여는 획기적인 기술을 끊임없이 혁신합니다.
+        <br>
+        <br>
+        혁신을 내일의 솔루션으로 전환합니다.
+        <br>
+        <br>
+        예상 이미지
+        <img src="./홈페이지_회사소개대지 1.png">
+    </div>
+    <div class="page" id="philosophy"><h2>Mission & Vision</h2>
+      
+
+    </div>
+    <div class="page" id="history"><h2>회사연혁</h2><p>기존 페이지 사용</p></div>
+    <div class="page" id="map"><h2>오시는 길</h2><p>기존 페이지 사용</p></div>
+
+    <div class="page" id="sensor"><h2>Sensor</h2><p>- 이미지 추가 방식으로 페이지 구조 변경 요청, 이미지가 없을 경우 준비 중 팝업 요청</p></div>
+    <div class="page" id="iolink"><h2>Io Link Machine Vision</h2><p>- 이미지 추가 방식으로 페이지 구조 변경 요청, 이미지가 없을 경우 준비 중 팝업 요청</p></div>
+    <div class="page" id="aoi2d"><h2>2D AOI (구조광)</h2><p>- 이미지 추가 방식으로 페이지 구조 변경 요청, 이미지가 없을 경우 준비 중 팝업 요청</p></div>
+    <div class="page" id="aoi25d"><h2>2.5D AOI (OCT)</h2><p>- 이미지 추가 방식으로 페이지 구조 변경 요청, 이미지가 없을 경우 준비 중 팝업 요청</p></div>
+    <div class="page" id="aoi3d"><h2>3D AOI (KLENS)</h2><p>- 이미지 추가 방식으로 페이지 구조 변경 요청, 이미지가 없을 경우 준비 중 팝업 요청</p></div>
+    <div class="page" id="fraunhofer"><h2>Fraunhofer</h2><p>- 이미지 추가 방식으로 페이지 구조 변경 요청, 이미지가 없을 경우 준비 중 팝업 요청</p></div>
+
+    <div class="page" id="existing-products"><h2>기존 제품</h2><p>https://ekais.kr/kais/catalog.php?ca_id=10 페이지가 노출되도록 변경 부탁드립니다.</p></div>
+
+    <div class="page" id="contact"><h2>문의하기</h2><p>기존 페이지 사용</p></div>
+    <div class="page" id="recruit"><h2>채용</h2><p>기존 페이지 사용</p></div>
+    <div class="page" id="data"><h2>자료실</h2><p>기존 페이지 사용</p></div>
+    <div class="page" id="pr"><h2>PR</h2><p>기존 페이지 사용</p></div>
+  </main>
+
+  <script>
+    function showPage(id) {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => page.classList.remove('active'));
+      const target = document.getElementById(id);
+      if (target) {
+        target.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function resetPages() {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => page.classList.remove('active'));
+    }
+  </script>
+</body>
+</html>
